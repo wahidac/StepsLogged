@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3EBC11752174087C007F2034 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC11742174087C007F2034 /* AppDelegate.swift */; };
+		3EBC11772174087C007F2034 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC11762174087C007F2034 /* ViewController.swift */; };
+		3EBC117A2174087D007F2034 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBC11782174087D007F2034 /* Main.storyboard */; };
+		3EBC117C2174087F007F2034 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EBC117B2174087F007F2034 /* Assets.xcassets */; };
+		3EBC117F2174087F007F2034 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBC117D2174087F007F2034 /* LaunchScreen.storyboard */; };
+		3EBC118A21740880007F2034 /* StepLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC118921740880007F2034 /* StepLoggerTests.swift */; };
+		3EBC119521740880007F2034 /* StepLoggerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC119421740880007F2034 /* StepLoggerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3EBC118621740880007F2034 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EBC11692174087C007F2034 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3EBC11702174087C007F2034;
+			remoteInfo = StepLogger;
+		};
+		3EBC119121740880007F2034 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EBC11692174087C007F2034 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3EBC11702174087C007F2034;
+			remoteInfo = StepLogger;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3EBC11712174087C007F2034 /* StepLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EBC11742174087C007F2034 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3EBC11762174087C007F2034 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3EBC11792174087D007F2034 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3EBC117B2174087F007F2034 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3EBC117E2174087F007F2034 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3EBC11802174087F007F2034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EBC118521740880007F2034 /* StepLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StepLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EBC118921740880007F2034 /* StepLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepLoggerTests.swift; sourceTree = "<group>"; };
+		3EBC118B21740880007F2034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EBC119021740880007F2034 /* StepLoggerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StepLoggerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EBC119421740880007F2034 /* StepLoggerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepLoggerUITests.swift; sourceTree = "<group>"; };
+		3EBC119621740880007F2034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3EBC116E2174087C007F2034 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EBC118221740880007F2034 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EBC118D21740880007F2034 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3EBC11682174087C007F2034 = {
+			isa = PBXGroup;
+			children = (
+				3EBC11732174087C007F2034 /* StepLogger */,
+				3EBC118821740880007F2034 /* StepLoggerTests */,
+				3EBC119321740880007F2034 /* StepLoggerUITests */,
+				3EBC11722174087C007F2034 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3EBC11722174087C007F2034 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3EBC11712174087C007F2034 /* StepLogger.app */,
+				3EBC118521740880007F2034 /* StepLoggerTests.xctest */,
+				3EBC119021740880007F2034 /* StepLoggerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3EBC11732174087C007F2034 /* StepLogger */ = {
+			isa = PBXGroup;
+			children = (
+				3EBC11742174087C007F2034 /* AppDelegate.swift */,
+				3EBC11762174087C007F2034 /* ViewController.swift */,
+				3EBC11782174087D007F2034 /* Main.storyboard */,
+				3EBC117B2174087F007F2034 /* Assets.xcassets */,
+				3EBC117D2174087F007F2034 /* LaunchScreen.storyboard */,
+				3EBC11802174087F007F2034 /* Info.plist */,
+			);
+			path = StepLogger;
+			sourceTree = "<group>";
+		};
+		3EBC118821740880007F2034 /* StepLoggerTests */ = {
+			isa = PBXGroup;
+			children = (
+				3EBC118921740880007F2034 /* StepLoggerTests.swift */,
+				3EBC118B21740880007F2034 /* Info.plist */,
+			);
+			path = StepLoggerTests;
+			sourceTree = "<group>";
+		};
+		3EBC119321740880007F2034 /* StepLoggerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3EBC119421740880007F2034 /* StepLoggerUITests.swift */,
+				3EBC119621740880007F2034 /* Info.plist */,
+			);
+			path = StepLoggerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3EBC11702174087C007F2034 /* StepLogger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EBC119921740880007F2034 /* Build configuration list for PBXNativeTarget "StepLogger" */;
+			buildPhases = (
+				3EBC116D2174087C007F2034 /* Sources */,
+				3EBC116E2174087C007F2034 /* Frameworks */,
+				3EBC116F2174087C007F2034 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StepLogger;
+			productName = StepLogger;
+			productReference = 3EBC11712174087C007F2034 /* StepLogger.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3EBC118421740880007F2034 /* StepLoggerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EBC119C21740880007F2034 /* Build configuration list for PBXNativeTarget "StepLoggerTests" */;
+			buildPhases = (
+				3EBC118121740880007F2034 /* Sources */,
+				3EBC118221740880007F2034 /* Frameworks */,
+				3EBC118321740880007F2034 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3EBC118721740880007F2034 /* PBXTargetDependency */,
+			);
+			name = StepLoggerTests;
+			productName = StepLoggerTests;
+			productReference = 3EBC118521740880007F2034 /* StepLoggerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3EBC118F21740880007F2034 /* StepLoggerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EBC119F21740880007F2034 /* Build configuration list for PBXNativeTarget "StepLoggerUITests" */;
+			buildPhases = (
+				3EBC118C21740880007F2034 /* Sources */,
+				3EBC118D21740880007F2034 /* Frameworks */,
+				3EBC118E21740880007F2034 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3EBC119221740880007F2034 /* PBXTargetDependency */,
+			);
+			name = StepLoggerUITests;
+			productName = StepLoggerUITests;
+			productReference = 3EBC119021740880007F2034 /* StepLoggerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3EBC11692174087C007F2034 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = Wahid;
+				TargetAttributes = {
+					3EBC11702174087C007F2034 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					3EBC118421740880007F2034 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 3EBC11702174087C007F2034;
+					};
+					3EBC118F21740880007F2034 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 3EBC11702174087C007F2034;
+					};
+				};
+			};
+			buildConfigurationList = 3EBC116C2174087C007F2034 /* Build configuration list for PBXProject "StepLogger" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3EBC11682174087C007F2034;
+			productRefGroup = 3EBC11722174087C007F2034 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3EBC11702174087C007F2034 /* StepLogger */,
+				3EBC118421740880007F2034 /* StepLoggerTests */,
+				3EBC118F21740880007F2034 /* StepLoggerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3EBC116F2174087C007F2034 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EBC117F2174087F007F2034 /* LaunchScreen.storyboard in Resources */,
+				3EBC117C2174087F007F2034 /* Assets.xcassets in Resources */,
+				3EBC117A2174087D007F2034 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EBC118321740880007F2034 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EBC118E21740880007F2034 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3EBC116D2174087C007F2034 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EBC11772174087C007F2034 /* ViewController.swift in Sources */,
+				3EBC11752174087C007F2034 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EBC118121740880007F2034 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EBC118A21740880007F2034 /* StepLoggerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EBC118C21740880007F2034 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EBC119521740880007F2034 /* StepLoggerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3EBC118721740880007F2034 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3EBC11702174087C007F2034 /* StepLogger */;
+			targetProxy = 3EBC118621740880007F2034 /* PBXContainerItemProxy */;
+		};
+		3EBC119221740880007F2034 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3EBC11702174087C007F2034 /* StepLogger */;
+			targetProxy = 3EBC119121740880007F2034 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3EBC11782174087D007F2034 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3EBC11792174087D007F2034 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3EBC117D2174087F007F2034 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3EBC117E2174087F007F2034 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3EBC119721740880007F2034 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3EBC119821740880007F2034 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3EBC119A21740880007F2034 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 576R26N285;
+				INFOPLIST_FILE = StepLogger/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wahid.chowdhury.StepLogger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3EBC119B21740880007F2034 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 576R26N285;
+				INFOPLIST_FILE = StepLogger/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wahid.chowdhury.StepLogger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3EBC119D21740880007F2034 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 576R26N285;
+				INFOPLIST_FILE = StepLoggerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wahid.chowdhury.StepLoggerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StepLogger.app/StepLogger";
+			};
+			name = Debug;
+		};
+		3EBC119E21740880007F2034 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 576R26N285;
+				INFOPLIST_FILE = StepLoggerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wahid.chowdhury.StepLoggerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StepLogger.app/StepLogger";
+			};
+			name = Release;
+		};
+		3EBC11A021740880007F2034 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 576R26N285;
+				INFOPLIST_FILE = StepLoggerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wahid.chowdhury.StepLoggerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StepLogger;
+			};
+			name = Debug;
+		};
+		3EBC11A121740880007F2034 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 576R26N285;
+				INFOPLIST_FILE = StepLoggerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wahid.chowdhury.StepLoggerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StepLogger;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3EBC116C2174087C007F2034 /* Build configuration list for PBXProject "StepLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EBC119721740880007F2034 /* Debug */,
+				3EBC119821740880007F2034 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3EBC119921740880007F2034 /* Build configuration list for PBXNativeTarget "StepLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EBC119A21740880007F2034 /* Debug */,
+				3EBC119B21740880007F2034 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3EBC119C21740880007F2034 /* Build configuration list for PBXNativeTarget "StepLoggerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EBC119D21740880007F2034 /* Debug */,
+				3EBC119E21740880007F2034 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3EBC119F21740880007F2034 /* Build configuration list for PBXNativeTarget "StepLoggerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EBC11A021740880007F2034 /* Debug */,
+				3EBC11A121740880007F2034 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3EBC11692174087C007F2034 /* Project object */;
+}
