@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StepLogger/Controllers/StepsDataController.swift"
-            timestampString = "561421118.036363"
+            timestampString = "561421442.341068"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "fetchStepsData(numDays:completion:)"
             landmarkType = "7">
          </BreakpointContent>

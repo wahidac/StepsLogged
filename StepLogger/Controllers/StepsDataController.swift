@@ -26,13 +26,10 @@ extension StepsDataController {
         // A dispatch group to synchronize our numDays async calls to the pedometer class.
         let pedometerQuerys = DispatchGroup()
         
-        for i in 0..<numDays {
-            print("Fetching for upper bound: \(upperBound) and lower bound: \(lowerBound)")
-
+        // TODO: Fix problem w/ last data entry
+        for _ in 0..<numDays {
             pedometerQuerys.enter()
             pedometer.queryPedometerData(from: lowerBound, to: upperBound) { (data: CMPedometerData?, error: Error?) in
-                print("Fetched for upper bound: \(data?.startDate) and lower bound: \(data?.endDate)")
-                
                 if let error = error {
                     print("Failed to fetch pedometer data with error: \(error)")
                 } else if let data = data, let stepData = StepData(pedometerData: data) {
