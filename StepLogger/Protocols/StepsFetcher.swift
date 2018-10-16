@@ -25,5 +25,5 @@ protocol StepsFetcher {
      - parameter intervalSize: Size of an interval (day, hour, second, etc.)
      - parameter completion: closure to execute on completion.
      */
-    func fetchStepsData(numIntervals: Int, intervalSize: IntervalSize, completion: (([StepData]) -> Void))
+    func fetchStepsData(numIntervals: Int, intervalSize: IntervalSize, completion: @escaping (([StepData]) -> Void))
 }

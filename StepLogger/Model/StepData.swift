@@ -9,6 +9,7 @@
 import Foundation
 import CoreMotion
 
+// TODO: Unit test if time, especially the description production
 struct StepData {
     // Number of steps
     let numberSteps: Int
@@ -17,7 +18,9 @@ struct StepData {
     let distance: Int
     let distanceDescription: String
     // Date
-    // TODO: Insert date and some description for our cell
+    let lowerBound: Date
+    let upperBound: Date
+    let dateDescription: String
     
     init?(pedometerData: CMPedometerData) {
         guard let distance = pedometerData.distance else {
@@ -26,16 +29,32 @@ struct StepData {
         
         let numberSteps = Int(truncating: pedometerData.numberOfSteps)
         let distanceAsInt = Int(truncating: distance)
-        self.init(numberOfSteps: numberSteps, distance: distanceAsInt)
+        let lowerBound = pedometerData.startDate
+        let upperBound = pedometerData.endDate
+        
+        self.init(numberOfSteps: numberSteps, distance: distanceAsInt, lowerBound: lowerBound, upperBound: upperBound)
     }
     
-    init(numberOfSteps: Int, distance: Int) {
+    init(numberOfSteps: Int, distance: Int, lowerBound: Date, upperBound: Date) {
         self.numberSteps = numberOfSteps
-        self.numberStepsDescription = String(self.numberSteps)
+        self.numberStepsDescription = String(self.numberSteps) + " Steps"
         
         self.distance = distance
         
         let kilometers = Double(self.distance) / Double(1000)
         self.distanceDescription = String(format: "%.2f", kilometers) + " km"
+        
+        self.lowerBound = lowerBound
+        self.upperBound = upperBound
+        
+        let startOfToday = Date().startOfDay
+        if self.lowerBound == startOfToday {
+            self.dateDescription = "Today"
+        } else {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/dd"
+            
+            self.dateDescription = dateFormatter.string(from: self.lowerBound)
+        }
     }
 }

@@ -13,10 +13,10 @@ class StepsTableViewCell: UITableViewCell {
     @IBOutlet weak var numberOfSteps: UILabel!
     @IBOutlet weak var distance: UILabel!
     
-    func configure(date: String, stepData: StepData) {
-        currentDate.text = date
-        numberOfSteps.text = stepData.distanceDescription
-        distance.text = stepData.numberStepsDescription
+    func configure(stepData: StepData) {
+        currentDate.text = stepData.dateDescription
+        numberOfSteps.text = stepData.numberStepsDescription
+        distance.text = stepData.distanceDescription
     }
     
     func configureErrorState() {

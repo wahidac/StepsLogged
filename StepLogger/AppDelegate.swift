@@ -22,8 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let oneDay: TimeInterval = 60 * 60 * 24
         let threeDaysBack = Date(timeIntervalSinceNow: -3 * oneDay)
         let currentMoment = Date()
-        let startOfDay = currentMoment.startOfDay
-        pedometer.queryPedometerData(from: startOfDay, to: currentMoment) { (data: CMPedometerData?, error: Error?) in
+        let today = currentMoment.startOfDay
+        let yesterday = today.startOfPreviousDay
+        let dayBeforeYesterday = yesterday.startOfPreviousDay
+        pedometer.queryPedometerData(from: dayBeforeYesterday, to: yesterday) { (data: CMPedometerData?, error: Error?) in
             print(data)
         }
         
