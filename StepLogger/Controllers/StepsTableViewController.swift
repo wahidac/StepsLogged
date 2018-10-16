@@ -13,7 +13,7 @@ class StepsTableViewController: UITableViewController {
     var stepDataByDay: [StepData]?
     
     // Constants
-    let numDaysToRequest = 20
+    let numDaysToRequest = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()

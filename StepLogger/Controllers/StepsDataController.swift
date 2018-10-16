@@ -13,7 +13,6 @@ class StepsDataController {
     let pedometer: CMPedometer = CMPedometer()
 }
 
-
 // // MARK: Fetching helper methods
 extension StepsDataController {
     func fetchStepsData(numDays: Int, completion: @escaping (([StepData]) -> Void)) {

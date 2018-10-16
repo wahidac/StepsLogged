@@ -19,6 +19,8 @@
 		3EBE6A4821756D800029949C /* StepsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE6A4721756D800029949C /* StepsFetcher.swift */; };
 		3EBE6A4A21756F620029949C /* StepData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE6A4921756F620029949C /* StepData.swift */; };
 		3EBE6A4E217570EC0029949C /* StepsDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE6A4D217570EC0029949C /* StepsDataController.swift */; };
+		3EF4BA5821769D6800599540 /* StepsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF4BA5721769D6800599540 /* StepsDetailViewController.swift */; };
+		3EF4BA5B21769FB100599540 /* StepsDetailGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF4BA5A21769FB100599540 /* StepsDetailGraphView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		3EBE6A4721756D800029949C /* StepsFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsFetcher.swift; sourceTree = "<group>"; };
 		3EBE6A4921756F620029949C /* StepData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepData.swift; sourceTree = "<group>"; };
 		3EBE6A4D217570EC0029949C /* StepsDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsDataController.swift; sourceTree = "<group>"; };
+		3EF4BA5721769D6800599540 /* StepsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsDetailViewController.swift; sourceTree = "<group>"; };
+		3EF4BA5A21769FB100599540 /* StepsDetailGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsDetailGraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				3EBE6A442175672E0029949C /* StepsTableViewCell.swift */,
+				3EF4BA5A21769FB100599540 /* StepsDetailGraphView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 			children = (
 				3EBC11762174087C007F2034 /* StepsTableViewController.swift */,
 				3EBE6A4D217570EC0029949C /* StepsDataController.swift */,
+				3EF4BA5721769D6800599540 /* StepsDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -306,7 +312,9 @@
 				3EBC11772174087C007F2034 /* StepsTableViewController.swift in Sources */,
 				3EBE6A4A21756F620029949C /* StepData.swift in Sources */,
 				3EBE6A4E217570EC0029949C /* StepsDataController.swift in Sources */,
+				3EF4BA5821769D6800599540 /* StepsDetailViewController.swift in Sources */,
 				3EBE6A452175672E0029949C /* StepsTableViewCell.swift in Sources */,
+				3EF4BA5B21769FB100599540 /* StepsDetailGraphView.swift in Sources */,
 				3EBE6A4821756D800029949C /* StepsFetcher.swift in Sources */,
 				3EBE6A40217561F30029949C /* Date+Helpers.swift in Sources */,
 				3EBC11752174087C007F2034 /* AppDelegate.swift in Sources */,

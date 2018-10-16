@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -62,6 +63,7 @@
                                     <outlet property="currentDate" destination="SSi-aE-iQJ" id="qTf-Is-xIA"/>
                                     <outlet property="distance" destination="5rC-70-utk" id="JRf-sB-jgN"/>
                                     <outlet property="numberOfSteps" destination="pHv-lI-jR4" id="6IU-WG-Yl5"/>
+                                    <segue destination="bcK-rs-ftb" kind="show" id="EUM-hM-ROa"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -75,6 +77,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xhs-Rb-9uN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1720.8" y="381.85907046476763"/>
+        </scene>
+        <!--Steps Detail View Controller-->
+        <scene sceneID="oSJ-bS-pFF">
+            <objects>
+                <viewController id="bcK-rs-ftb" customClass="StepsDetailViewController" customModule="StepLogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rOi-aN-sIi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDa-L2-ICl" customClass="StepsDetailGraphView" customModule="StepLogger" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="167" width="375" height="333.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="0.98039215686274506" green="0.9137254901960784" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="0.9882352941176471" green="0.30980392156862746" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PDa-L2-ICl" firstAttribute="trailing" secondItem="3Ww-3d-6G0" secondAttribute="trailing" id="5zH-eh-PBg"/>
+                            <constraint firstItem="PDa-L2-ICl" firstAttribute="height" secondItem="rOi-aN-sIi" secondAttribute="height" multiplier="0.5" id="Oed-tf-wwi"/>
+                            <constraint firstItem="PDa-L2-ICl" firstAttribute="leading" secondItem="3Ww-3d-6G0" secondAttribute="leading" id="cYk-6R-Htq"/>
+                            <constraint firstItem="PDa-L2-ICl" firstAttribute="centerY" secondItem="rOi-aN-sIi" secondAttribute="centerY" id="fAF-pz-BRE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3Ww-3d-6G0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ivi-Mk-Dp6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2524" y="383.65817091454278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KvQ-PC-4pf">
