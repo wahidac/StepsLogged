@@ -12,12 +12,12 @@
         <scene sceneID="S53-Ue-OBf">
             <objects>
                 <tableViewController id="3ya-3R-C8m" customClass="StepsTableViewController" customModule="StepLogger" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aUS-Xd-ain">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aUS-Xd-ain">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="90" id="Nz0-LB-xtR" customClass="StepsTableViewCell" customModule="StepLogger" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StepsTableViewCell" rowHeight="90" id="Nz0-LB-xtR" customClass="StepsTableViewCell" customModule="StepLogger" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nz0-LB-xtR" id="byD-YW-oRQ">
@@ -58,6 +58,11 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="0.66233122650259357" blue="0.05982912091869852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="currentDate" destination="SSi-aE-iQJ" id="qTf-Is-xIA"/>
+                                    <outlet property="distance" destination="5rC-70-utk" id="JRf-sB-jgN"/>
+                                    <outlet property="numberOfSteps" destination="pHv-lI-jR4" id="6IU-WG-Yl5"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

@@ -20,13 +20,26 @@ class StepsTableViewController: UITableViewController {
     private func populateDataSource() {
         stepsFetcher.fetchStepsData(numIntervals: 0, intervalSize: .day) { (stepData: [StepData]) in
             stepDataByDay = stepData
-            tableView.reloadData()
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.reloadData()
+            }
         }
     }
     
     // MARK: UITableViewDataSource
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StepsTableViewCell", for: indexPath)
+            as! StepsTableViewCell
+        guard let stepData = stepDataByDay else {
+            cell.configureErrorState()
+            print("Failed to retrieve data for indexPath: \(indexPath).")
+            return cell
+        }
+
+        let dayData = stepData[indexPath.row]
+        cell.configure(date: "Today", stepData: dayData)
         
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
