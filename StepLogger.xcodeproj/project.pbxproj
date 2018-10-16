@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		3EBC11752174087C007F2034 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC11742174087C007F2034 /* AppDelegate.swift */; };
-		3EBC11772174087C007F2034 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC11762174087C007F2034 /* ViewController.swift */; };
+		3EBC11772174087C007F2034 /* StepsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC11762174087C007F2034 /* StepsTableViewController.swift */; };
 		3EBC117A2174087D007F2034 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBC11782174087D007F2034 /* Main.storyboard */; };
 		3EBC117C2174087F007F2034 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EBC117B2174087F007F2034 /* Assets.xcassets */; };
 		3EBC117F2174087F007F2034 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBC117D2174087F007F2034 /* LaunchScreen.storyboard */; };
 		3EBC118A21740880007F2034 /* StepLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC118921740880007F2034 /* StepLoggerTests.swift */; };
 		3EBC119521740880007F2034 /* StepLoggerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC119421740880007F2034 /* StepLoggerUITests.swift */; };
+		3EBE6A40217561F30029949C /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE6A3F217561F30029949C /* Date+Helpers.swift */; };
+		3EBE6A452175672E0029949C /* StepsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE6A442175672E0029949C /* StepsTableViewCell.swift */; };
+		3EBE6A4821756D800029949C /* StepsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE6A4721756D800029949C /* StepsDataSource.swift */; };
+		3EBE6A4A21756F620029949C /* StepData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE6A4921756F620029949C /* StepData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,7 @@
 /* Begin PBXFileReference section */
 		3EBC11712174087C007F2034 /* StepLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EBC11742174087C007F2034 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3EBC11762174087C007F2034 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3EBC11762174087C007F2034 /* StepsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsTableViewController.swift; sourceTree = "<group>"; };
 		3EBC11792174087D007F2034 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3EBC117B2174087F007F2034 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EBC117E2174087F007F2034 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +51,10 @@
 		3EBC119021740880007F2034 /* StepLoggerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StepLoggerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EBC119421740880007F2034 /* StepLoggerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepLoggerUITests.swift; sourceTree = "<group>"; };
 		3EBC119621740880007F2034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EBE6A3F217561F30029949C /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
+		3EBE6A442175672E0029949C /* StepsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsTableViewCell.swift; sourceTree = "<group>"; };
+		3EBE6A4721756D800029949C /* StepsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsDataSource.swift; sourceTree = "<group>"; };
+		3EBE6A4921756F620029949C /* StepData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +105,16 @@
 		3EBC11732174087C007F2034 /* StepLogger */ = {
 			isa = PBXGroup;
 			children = (
+				3EBE6A4B2175709E0029949C /* Model */,
+				3EBE6A4621756D5A0029949C /* Protocols */,
+				3EBE6A432175667C0029949C /* Views */,
 				3EBC11742174087C007F2034 /* AppDelegate.swift */,
-				3EBC11762174087C007F2034 /* ViewController.swift */,
+				3EBC11762174087C007F2034 /* StepsTableViewController.swift */,
 				3EBC11782174087D007F2034 /* Main.storyboard */,
 				3EBC117B2174087F007F2034 /* Assets.xcassets */,
 				3EBC117D2174087F007F2034 /* LaunchScreen.storyboard */,
 				3EBC11802174087F007F2034 /* Info.plist */,
+				3EBE6A3F217561F30029949C /* Date+Helpers.swift */,
 			);
 			path = StepLogger;
 			sourceTree = "<group>";
@@ -123,6 +135,30 @@
 				3EBC119621740880007F2034 /* Info.plist */,
 			);
 			path = StepLoggerUITests;
+			sourceTree = "<group>";
+		};
+		3EBE6A432175667C0029949C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3EBE6A442175672E0029949C /* StepsTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3EBE6A4621756D5A0029949C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3EBE6A4721756D800029949C /* StepsDataSource.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3EBE6A4B2175709E0029949C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3EBE6A4921756F620029949C /* StepData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +292,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EBC11772174087C007F2034 /* ViewController.swift in Sources */,
+				3EBC11772174087C007F2034 /* StepsTableViewController.swift in Sources */,
+				3EBE6A4A21756F620029949C /* StepData.swift in Sources */,
+				3EBE6A452175672E0029949C /* StepsTableViewCell.swift in Sources */,
+				3EBE6A4821756D800029949C /* StepsDataSource.swift in Sources */,
+				3EBE6A40217561F30029949C /* Date+Helpers.swift in Sources */,
 				3EBC11752174087C007F2034 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

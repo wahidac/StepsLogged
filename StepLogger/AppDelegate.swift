@@ -7,15 +7,30 @@
 //
 
 import UIKit
+import CoreMotion
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var pedometer: CMPedometer!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let activityManager = CMMotionActivityManager()
+        pedometer = CMPedometer()
+
+        let oneDay: TimeInterval = 60 * 60 * 24
+        let threeDaysBack = Date(timeIntervalSinceNow: -3 * oneDay)
+        let currentMoment = Date()
+        let startOfDay = currentMoment.startOfDay
+        pedometer.queryPedometerData(from: startOfDay, to: currentMoment) { (data: CMPedometerData?, error: Error?) in
+            print(data)
+        }
+        
+        // Will probably need to just calculate Date ranges for each day relative to currentTime.
+        
+        
+        
         return true
     }
 

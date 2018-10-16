@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  StepsTableViewController.swift
 //  StepLogger
 //
 //  Created by Wahid on 10/14/18.
@@ -8,13 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class StepsTableViewController: UITableViewController {
+    var stepsDataSource: StepsDataSource!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        print("hey")
     }
 
-
+    
+    
 }
 
