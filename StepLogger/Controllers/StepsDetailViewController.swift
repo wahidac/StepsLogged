@@ -25,6 +25,7 @@ class StepsDetailViewController: UIViewController {
     private func updateDetailView() {
         var graphPoints: [Int] = []
         var lastPoint = 0
+        var lastLabelAdded: UILabel?
         let labelFormatter = DateFormatter()
         labelFormatter.dateFormat = "h a"
         
@@ -37,7 +38,15 @@ class StepsDetailViewController: UIViewController {
             timeLabel.font = UIFont.systemFont(ofSize: 10.0)
             timeLabel.text = labelFormatter.string(from: step.upperBound)
             timeLabel.textAlignment = .center
-            stackView.addArrangedSubview(timeLabel)
+            
+            if let lastLabel = lastLabelAdded, lastLabel.text == timeLabel.text {
+                // Don't bother with this data point, it's close after our last point
+                continue
+            } else {
+                stackView.addArrangedSubview(timeLabel)
+                lastLabelAdded = timeLabel
+            }
+            
         }
         
         stepsDetailGraphView.graphPoints = graphPoints
