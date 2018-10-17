@@ -61,11 +61,10 @@ extension StepsDataController : StepsFetcher {
         let pedometerQuerys = DispatchGroup()
         
         // TODO: Fix problem w/ last data entry
-        while currentLowerBound < upperBound {
+        while currentLowerBoundPlusIntervalSize < upperBound {
             pedometerQuerys.enter()
             
-            let upperBoundToQuery = min(currentLowerBoundPlusIntervalSize, upperBound)
-            pedometer.queryPedometerData(from: currentLowerBound, to: upperBoundToQuery) { (data: CMPedometerData?, error: Error?) in
+            pedometer.queryPedometerData(from: currentLowerBound, to: currentLowerBoundPlusIntervalSize) { (data: CMPedometerData?, error: Error?) in
                 if let error = error {
                     print("Failed to fetch pedometer data with error: \(error)")
                 } else if let data = data, let stepData = StepData(pedometerData: data) {

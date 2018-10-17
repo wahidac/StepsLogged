@@ -22,7 +22,7 @@ class StepsTableViewCell: UITableViewCell {
     func configureErrorState() {
         currentDate.isHidden = true
         distance.isHidden = true
-        numberOfSteps.text = "Failed to load pedometer data!"
+        numberOfSteps.text = "Failed to load steps data!"
     }
     
     override func awakeFromNib() {

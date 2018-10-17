@@ -8,14 +8,39 @@
 
 import UIKit
 
+// Display a line graph that shows our step activity broken down in 3 hour intervals
 class StepsDetailViewController: UIViewController {
-    var detailedStepData: [StepData]? {
+    @IBOutlet weak var stepsDetailGraphView: StepsDetailGraphView!
+    @IBOutlet weak var stackView: UIStackView!
+    
+    var detailedStepData: [StepData] = [] {
         didSet {
-            // TODO: Reload the view we are rendering
-            for step in detailedStepData! {
-                print(step)
-            }
+            updateDetailView()
         }
+    }
+    
+    private func updateDetailView() {
+        var graphPoints: [Int] = []
+        var lastPoint = 0
+        let labelFormatter = DateFormatter()
+        labelFormatter.dateFormat = "h a"
+        
+        for step in detailedStepData {
+            lastPoint += step.numberSteps
+            graphPoints.append(lastPoint)
+            
+            // Create a time label for the data point
+            let timeLabel = UILabel(frame: .zero)
+            timeLabel.font = UIFont.systemFont(ofSize: 10.0)
+            timeLabel.text = labelFormatter.string(from: step.upperBound)
+            timeLabel.textAlignment = .center
+            stackView.addArrangedSubview(timeLabel)
+        }
+        
+        stepsDetailGraphView.graphPoints = graphPoints
+        
+        
+        // TODO: Reload the view we are rendering
     }
 
 

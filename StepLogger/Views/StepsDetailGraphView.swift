@@ -8,8 +8,9 @@
 
 import UIKit
 
-// Core Graphics code heavily inspired by Ray Wenderlich:
+// Core Graphics chart rendering code is copy and pasted from Ray Wenderlich:
 // https://www.raywenderlich.com/410-core-graphics-tutorial-part-2-gradients-and-contexts
+
 @IBDesignable class StepsDetailGraphView: UIView {
     private struct Constants {
         static let cornerRadiusSize = CGSize(width: 8.0, height: 8.0)
@@ -23,7 +24,7 @@ import UIKit
     @IBInspectable var startColor: UIColor = .red
     @IBInspectable var endColor: UIColor = .green
     
-    var graphPoints: [Int] = [4, 2, 6, 4, 5, 8, 3]
+    var graphPoints: [Int] = [0, 0, 530, 1800, 2254, 3872, 5763, 6187]
     
     override func draw(_ rect: CGRect) {
         let width = rect.width
