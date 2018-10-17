@@ -44,11 +44,4 @@ class StepsDetailViewController: UIViewController {
         // Redraw the view
         self.stepsDetailGraphView.setNeedsDisplay()
     }
-
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
 }

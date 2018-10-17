@@ -10,6 +10,7 @@ import Foundation
 import CoreMotion
 
 protocol StepsFetcher {
+    var maxNumDays: Int { get }
     /**
       Returns daily step data.
      
@@ -32,4 +33,11 @@ protocol StepsFetcher {
      - parameter completion: closure to execute on completion.
      */
     func fetchGranularStepsData(lowerBound: Date, upperBound: Date, intervalSize: TimeInterval, completion: @escaping (([StepData]) -> Void))
+}
+
+extension StepsFetcher {
+    // 7 is the max number of days we can request data from CMPedometer
+    var maxNumDays: Int {
+        return 7
+    }
 }

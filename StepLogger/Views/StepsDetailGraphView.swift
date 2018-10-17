@@ -8,7 +8,7 @@
 
 import UIKit
 
-// Core Graphics chart rendering code is mainly copy and pasted from Ray Wenderlich:
+// This Core Graphics chart rendering code is mainly copy and pasted from Ray Wenderlich:
 // https://www.raywenderlich.com/410-core-graphics-tutorial-part-2-gradients-and-contexts
 
 @IBDesignable class StepsDetailGraphView: UIView {

@@ -11,8 +11,6 @@ import CoreMotion
 
 class StepsDataController {
     let pedometer: CMPedometer = CMPedometer()
-    // 7 is the max number of days we can request data from CMPedometer
-    let maxNumDays: Int = 7
 }
 
 extension StepsDataController : StepsFetcher {
@@ -34,7 +32,6 @@ extension StepsDataController : StepsFetcher {
         }
     }
     
-    // TODO: Fix issue w/ duplicate data for TODAY
     func fetchGranularStepsData(lowerBound: Date, upperBound: Date, intervalSize: TimeInterval, completion: @escaping (([StepData]) -> Void)) {
         var fetchedData: [StepData] = []
         var currentLowerBound = lowerBound
@@ -43,7 +40,6 @@ extension StepsDataController : StepsFetcher {
         // A dispatch group to synchronize our numDays async calls to the pedometer class.
         let pedometerQuerys = DispatchGroup()
         
-        // TODO: Fix problem w/ last data entry
         while currentLowerBound < upperBound {
             pedometerQuerys.enter()
             
