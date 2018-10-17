@@ -13,7 +13,6 @@ class StepsTableViewController: UITableViewController {
     var stepDataByDay: [StepData]?
     
     // Constants
-    // 7 is the max number of days we can request data from CMPedometer
     let numDaysToRequest = 7
     
     override func viewDidLoad() {

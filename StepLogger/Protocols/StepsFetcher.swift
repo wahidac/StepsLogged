@@ -14,7 +14,7 @@ protocol StepsFetcher {
       Returns daily step data.
      
      - returns: Array of daily step data, ordered by the current day to the least recent day
-     - parameter numDays: Number of days back to return data for. 1 Returns the data for today, 2 returns data for today and yesterday, etc...
+     - parameter numDays: Number of days back to return data for. 1 Returns the data for today, 2 returns data for today and yesterday, etc...The max this can be is 7
      - parameter completion: closure to execute on completion.
      */
     func fetchDailyStepsData(numDays: Int, completion: @escaping (([StepData]) -> Void))

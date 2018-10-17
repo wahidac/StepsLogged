@@ -11,47 +11,30 @@ import CoreMotion
 
 class StepsDataController {
     let pedometer: CMPedometer = CMPedometer()
+    // 7 is the max number of days we can request data from CMPedometer
+    let maxNumDays: Int = 7
 }
 
-// // MARK: Fetching helper methods
 extension StepsDataController : StepsFetcher {
     func fetchDailyStepsData(numDays: Int, completion: @escaping (([StepData]) -> Void)) {
         // Initialize our upper bound to now
-        var upperBound = Date()
-        // Initialize our lower bound to the start of today
+        let upperBound = Date()
         var lowerBound: Date = upperBound.startOfDay
-        var fetchedData: [StepData] = []
+        let oneDay: TimeInterval = 60 * 60 * 24
         
-        // A dispatch group to synchronize our numDays async calls to the pedometer class.
-        let pedometerQuerys = DispatchGroup()
-        
-        // TODO: Fix problem w/ last data entry
-        for _ in 0..<numDays {
-            pedometerQuerys.enter()
-            pedometer.queryPedometerData(from: lowerBound, to: upperBound) { (data: CMPedometerData?, error: Error?) in
-                if let error = error {
-                    print("Failed to fetch pedometer data with error: \(error)")
-                } else if let data = data, let stepData = StepData(pedometerData: data) {
-                    fetchedData.append(stepData)
-                }
-                
-                pedometerQuerys.leave()
-            }
-            
-            // Update the lower bound and upper bound
-            upperBound = lowerBound
-            lowerBound = upperBound.startOfPreviousDay
+        // Initialize our lower bound to numDays - 1 back ( the current day is day 1, that's why we subtract 1 )
+        for _ in 1..<min(numDays, maxNumDays) {
+            lowerBound = lowerBound.startOfPreviousDay
         }
-        
-        // Once all the querys have, finished execute the callback, passing in the data sorted by most recent to latest
-        pedometerQuerys.notify(queue: DispatchQueue.main) {
-            completion(fetchedData.sorted(by: { (a: StepData, b: StepData) -> Bool in
-                a.lowerBound > b.lowerBound
-            }))
+        fetchGranularStepsData(lowerBound: lowerBound, upperBound: upperBound, intervalSize: oneDay) { (stepData: [StepData]) in
+            let sortedData = stepData.sorted(by: { (a: StepData, b: StepData) -> Bool in
+                return a.lowerBound > b.lowerBound
+            })
+            completion(sortedData)
         }
     }
     
-    // TODO: Consume this in the above if time
+    // TODO: Fix issue w/ duplicate data for TODAY
     func fetchGranularStepsData(lowerBound: Date, upperBound: Date, intervalSize: TimeInterval, completion: @escaping (([StepData]) -> Void)) {
         var fetchedData: [StepData] = []
         var currentLowerBound = lowerBound
@@ -61,10 +44,11 @@ extension StepsDataController : StepsFetcher {
         let pedometerQuerys = DispatchGroup()
         
         // TODO: Fix problem w/ last data entry
-        while currentLowerBoundPlusIntervalSize <= upperBound {
+        while currentLowerBound < upperBound {
             pedometerQuerys.enter()
             
-            pedometer.queryPedometerData(from: currentLowerBound, to: currentLowerBoundPlusIntervalSize) { (data: CMPedometerData?, error: Error?) in
+            let queryUpperBound = min(currentLowerBoundPlusIntervalSize, upperBound)
+            pedometer.queryPedometerData(from: currentLowerBound, to: queryUpperBound) { (data: CMPedometerData?, error: Error?) in
                 if let error = error {
                     print("Failed to fetch pedometer data with error: \(error)")
                 } else if let data = data, let stepData = StepData(pedometerData: data) {
