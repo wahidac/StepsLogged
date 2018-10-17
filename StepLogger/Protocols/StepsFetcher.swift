@@ -20,7 +20,6 @@ protocol StepsFetcher {
      */
     func fetchDailyStepsData(numDays: Int, completion: @escaping (([StepData]) -> Void))
     
-    
     /**
      Returns granular step data. Use this to calculate steps at a granularity finer than a day. For example, the number of steps taken between
      1:00 PM and 2:00 PM Yesterday. This returns data for intervals of size intervalSize seconds starting from the lowerBound and continuing

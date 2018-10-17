@@ -9,7 +9,6 @@
 import Foundation
 import CoreMotion
 
-// TODO: Unit test if time, especially the description production
 struct StepData {
     // Number of steps
     let numberSteps: Int

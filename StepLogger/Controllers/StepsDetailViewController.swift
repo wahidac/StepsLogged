@@ -16,7 +16,9 @@ class StepsDetailViewController: UIViewController {
     
     var detailedStepData: [StepData] = [] {
         didSet {
-            updateDetailView()
+            DispatchQueue.main.async { [weak self] in
+                self?.updateDetailView()
+            }
         }
     }
     

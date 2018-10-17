@@ -8,7 +8,6 @@
 
 import Foundation
 
-// TODO: Unit test if time
 extension Date {
     var startOfDay: Date {
         return Calendar.current.startOfDay(for: self)

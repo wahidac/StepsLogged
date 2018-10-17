@@ -9,7 +9,7 @@
 import UIKit
 
 class StepsTableViewController: UITableViewController {
-    var stepsFetcher: StepsFetcher = StepsDataController()
+    var stepsFetcher: StepsFetcher!
     var stepDataByDay: [StepData]?
     
     // Constants
@@ -17,7 +17,17 @@ class StepsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        populateDataSource()
+        
+        #if targetEnvironment(simulator)
+            // Use Mock Data
+            stepsFetcher = MockStepsDataController()
+            print("We are running on a simulator, use mock data")
+        #else
+            // Pull from the device
+            stepsFetcher = StepsDataController()
+            print("We are running on a device, pull from the user's pedometer")
+        #endif
+            populateDataSource()
     }
     
     private func populateDataSource() {
