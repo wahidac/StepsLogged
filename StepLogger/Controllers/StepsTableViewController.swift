@@ -13,7 +13,8 @@ class StepsTableViewController: UITableViewController {
     var stepDataByDay: [StepData]?
     
     // Constants
-    let numDaysToRequest = 10
+    // 7 is the max number of days we can request data from CMPedometer
+    let numDaysToRequest = 7
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +22,25 @@ class StepsTableViewController: UITableViewController {
     }
     
     private func populateDataSource() {
-        stepsFetcher.fetchStepsData(numIntervals: numDaysToRequest, intervalSize: .day) { [weak self] (stepData: [StepData]) in
+        stepsFetcher.fetchDailyStepsData(numDays: numDaysToRequest) { [weak self] (stepData: [StepData]) in
             self?.stepDataByDay = stepData
             DispatchQueue.main.async { [weak self] in
                 self?.tableView.reloadData()
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = tableView.indexPathForSelectedRow, let stepDataByDay = stepDataByDay  else {
+            print("Failed to retrieve data before presenting detail view controller.")
+            return
+        }
+        
+        let stepData = stepDataByDay[indexPath.row]
+        let detailViewController = segue.destination as! StepsDetailViewController
+        // Fetch data for every 3 hours
+        stepsFetcher.fetchGranularStepsData(lowerBound: stepData.lowerBound, upperBound: stepData.upperBound, intervalSize: 60 * 60 * 3) { (stepData: [StepData]) in
+            detailViewController.detailedStepData = stepData
         }
     }
     
@@ -47,11 +62,6 @@ class StepsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return stepDataByDay?.count ?? 0
-    }
-    
-    // MARK: UITableViewDelegate methods
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: Spin up a detail view controller and push it onto the nav stack
     }
 }
 

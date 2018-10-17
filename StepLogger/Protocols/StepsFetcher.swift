@@ -9,21 +9,27 @@
 import Foundation
 import CoreMotion
 
-enum IntervalSize {
-    case day
-    case hour
-    // Add anymore intervals we might need here
-}
-
 protocol StepsFetcher {
     /**
-      Returns step data.
+      Returns daily step data.
      
-     - returns: Array of step data, with the first element pointing to the current
-    interval and the subsequent intervals following in order from most recent to latest
-     - parameter numIntervals: Number of intervals back to return data for
-     - parameter intervalSize: Size of an interval (day, hour, second, etc.)
+     - returns: Array of daily step data, ordered by the current day to the least recent day
+     - parameter numDays: Number of days back to return data for. 1 Returns the data for today, 2 returns data for today and yesterday, etc...
      - parameter completion: closure to execute on completion.
      */
-    func fetchStepsData(numIntervals: Int, intervalSize: IntervalSize, completion: @escaping (([StepData]) -> Void))
+    func fetchDailyStepsData(numDays: Int, completion: @escaping (([StepData]) -> Void))
+    
+    
+    /**
+     Returns granular step data. Use this to calculate steps at a granularity finer than a day. For example, the number of steps taken between
+     1:00 PM and 2:00 PM Yesterday. This returns data for intervals of size intervalSize seconds starting from the lowerBound and continuing
+     until we hit the upper bound
+     
+     - returns: Array of step data, ordered by least recent to most recent
+     - parameter lowerBound: Earliest time in history to consider
+     - parameter upperBound: Latest time in history to consider
+     - parameter intervalSize: The size of the intervals to consider
+     - parameter completion: closure to execute on completion.
+     */
+    func fetchGranularStepsData(lowerBound: Date, upperBound: Date, intervalSize: TimeInterval, completion: @escaping (([StepData]) -> Void))
 }

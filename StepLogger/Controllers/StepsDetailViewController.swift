@@ -9,6 +9,15 @@
 import UIKit
 
 class StepsDetailViewController: UIViewController {
+    var detailedStepData: [StepData]? {
+        didSet {
+            // TODO: Reload the view we are rendering
+            for step in detailedStepData! {
+                print(step)
+            }
+        }
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()

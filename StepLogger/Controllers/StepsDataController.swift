@@ -14,8 +14,8 @@ class StepsDataController {
 }
 
 // // MARK: Fetching helper methods
-extension StepsDataController {
-    func fetchStepsData(numDays: Int, completion: @escaping (([StepData]) -> Void)) {
+extension StepsDataController : StepsFetcher {
+    func fetchDailyStepsData(numDays: Int, completion: @escaping (([StepData]) -> Void)) {
         // Initialize our upper bound to now
         var upperBound = Date()
         // Initialize our lower bound to the start of today
@@ -50,26 +50,41 @@ extension StepsDataController {
             }))
         }
     }
-}
-
-extension StepsDataController : StepsFetcher {
-    func fetchStepsData(numIntervals: Int, intervalSize: IntervalSize, completion: @escaping (([StepData]) -> Void)) {
-        //        let testStep1 = StepData(numberOfSteps: 4000, distance: 1200)
-        //        let testStep2 = StepData(numberOfSteps: 2000, distance: 2400)
-        //        completion([testStep1, testStep2])
+    
+    // TODO: Consume this in the above if time
+    func fetchGranularStepsData(lowerBound: Date, upperBound: Date, intervalSize: TimeInterval, completion: @escaping (([StepData]) -> Void)) {
+        var fetchedData: [StepData] = []
+        var currentLowerBound = lowerBound
+        var currentLowerBoundPlusIntervalSize = lowerBound.addingTimeInterval(intervalSize)
         
-        fetchStepsData(numDays: numIntervals) { completion($0) }
+        // A dispatch group to synchronize our numDays async calls to the pedometer class.
+        let pedometerQuerys = DispatchGroup()
         
+        // TODO: Fix problem w/ last data entry
+        while currentLowerBound < upperBound {
+            pedometerQuerys.enter()
+            
+            let upperBoundToQuery = min(currentLowerBoundPlusIntervalSize, upperBound)
+            pedometer.queryPedometerData(from: currentLowerBound, to: upperBoundToQuery) { (data: CMPedometerData?, error: Error?) in
+                if let error = error {
+                    print("Failed to fetch pedometer data with error: \(error)")
+                } else if let data = data, let stepData = StepData(pedometerData: data) {
+                    fetchedData.append(stepData)
+                }
+                
+                pedometerQuerys.leave()
+            }
+            
+            // Update the lower bound and upper bound
+            currentLowerBound = currentLowerBoundPlusIntervalSize
+            currentLowerBoundPlusIntervalSize = currentLowerBound.addingTimeInterval(intervalSize)
+        }
         
-        
-        //        pedometer.queryPedometerData(from: startOfDay, to: currentMoment) { (data: CMPedometerData?, error: Error?) in
-        //            if let error = error {
-        //                print("Failed to fetch pedometer data with error: \(error)")
-        //                completion([])
-        //            } else {
-        //                // TODO: Construct the data using API, right now return hard code
-        //
-        //            }
-        //        }
+        // Once all the querys have, finished execute the callback, passing in the data sorted by most recent to latest
+        pedometerQuerys.notify(queue: DispatchQueue.main) {
+            completion(fetchedData.sorted(by: { (a: StepData, b: StepData) -> Bool in
+                a.lowerBound < b.lowerBound
+            }))
+        }
     }
 }
