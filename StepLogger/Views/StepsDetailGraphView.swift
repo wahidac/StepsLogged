@@ -24,7 +24,7 @@ import UIKit
     @IBInspectable var startColor: UIColor = .red
     @IBInspectable var endColor: UIColor = .green
     
-    var graphPoints: [Int] = [0, 0, 530, 1800, 2254, 3872, 5763, 6187]
+    var graphPoints: [Int] = [0]
     
     override func draw(_ rect: CGRect) {
         let width = rect.width

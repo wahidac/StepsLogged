@@ -95,11 +95,20 @@
                                             <constraint firstAttribute="height" constant="25" id="edc-fK-Fd5"/>
                                         </constraints>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Nb-4c-qcr">
+                                        <rect key="frame" x="351" y="32" width="9" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="8Nb-4c-qcr" firstAttribute="top" secondItem="PDa-L2-ICl" secondAttribute="top" constant="32" id="074-Eu-Bfd"/>
+                                    <constraint firstAttribute="bottom" secondItem="8Nb-4c-qcr" secondAttribute="bottom" constant="280.5" id="IFI-QD-yL4"/>
                                     <constraint firstAttribute="bottom" secondItem="GhB-DT-cHJ" secondAttribute="bottom" constant="10" id="Kq2-14-sJm"/>
                                     <constraint firstItem="GhB-DT-cHJ" firstAttribute="leading" secondItem="PDa-L2-ICl" secondAttribute="leading" constant="15" id="LTD-x9-GK6"/>
+                                    <constraint firstAttribute="trailing" secondItem="8Nb-4c-qcr" secondAttribute="trailing" constant="15" id="b4r-Fi-AmX"/>
                                     <constraint firstAttribute="trailing" secondItem="GhB-DT-cHJ" secondAttribute="trailing" constant="15" id="nSZ-Bg-9Qr"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -122,6 +131,7 @@
                         <viewLayoutGuide key="safeArea" id="3Ww-3d-6G0"/>
                     </view>
                     <connections>
+                        <outlet property="maxSteps" destination="8Nb-4c-qcr" id="pmj-Sx-4Qh"/>
                         <outlet property="stackView" destination="GhB-DT-cHJ" id="vAl-cc-eMJ"/>
                         <outlet property="stepsDetailGraphView" destination="PDa-L2-ICl" id="xU2-zj-jkt"/>
                     </connections>

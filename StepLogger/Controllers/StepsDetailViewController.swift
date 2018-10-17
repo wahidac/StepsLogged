@@ -12,6 +12,7 @@ import UIKit
 class StepsDetailViewController: UIViewController {
     @IBOutlet weak var stepsDetailGraphView: StepsDetailGraphView!
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var maxSteps: UILabel!
     
     var detailedStepData: [StepData] = [] {
         didSet {
@@ -38,9 +39,10 @@ class StepsDetailViewController: UIViewController {
         }
         
         stepsDetailGraphView.graphPoints = graphPoints
+        maxSteps.text = String(lastPoint)
         
-        
-        // TODO: Reload the view we are rendering
+        // Redraw the view
+        self.stepsDetailGraphView.setNeedsDisplay()
     }
 
 
