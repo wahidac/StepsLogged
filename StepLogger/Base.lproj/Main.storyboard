@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Steps Table View Controller-->
+        <!--Steps By Date-->
         <scene sceneID="S53-Ue-OBf">
             <objects>
-                <tableViewController id="3ya-3R-C8m" customClass="StepsTableViewController" customModule="StepLogger" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Steps By Date" id="3ya-3R-C8m" customClass="StepsTableViewController" customModule="StepLogger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aUS-Xd-ain">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,7 +72,7 @@
                             <outlet property="delegate" destination="3ya-3R-C8m" id="CgX-Mc-aR1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="2i0-VZ-YHl"/>
+                    <navigationItem key="navigationItem" title="Steps By Day" id="2i0-VZ-YHl"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xhs-Rb-9uN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
